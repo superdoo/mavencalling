@@ -1,21 +1,14 @@
 pipeline {
     agent any
-    
+
     stages {
-        /*stage('Checkout') {
+        stage('List Workspace') {
             steps {
-                // Checkout source code from SCM
-                git 'https://github.com/superdoo/mavencalling.git'
+                script {
+                    // List workspace contents
+                    sh 'ls -al ${WORKSPACE}'
+                }
             }
         }
-        */
-        
-        stage('Build') {
-            steps {
-                // Use Maven to build the project
-                sh 'mvn clean install'
-            }
-        }
-        
     }
 }
