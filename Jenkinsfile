@@ -15,7 +15,7 @@ pipeline {
          stage('Build') {
             steps {
                 // Define Maven version and tool installation
-                tool 'Maven'
+                tool '3.9.6'
                 
                 // Use Maven to build the project
                 sh 'mvn clean install'
