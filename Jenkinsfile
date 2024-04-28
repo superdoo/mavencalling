@@ -12,8 +12,7 @@ pipeline {
           }
           }
 
-       stages {
-        stage('Build') {
+         stage('Build') {
             steps {
                 // Define Maven version and tool installation
                 tool 'Maven'
@@ -22,7 +21,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        }  
+       
     stage('SonarQube Analysis') {
     steps{
       sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=MichaelsScan -Dsonar.projectName='MichaelsScan'"
