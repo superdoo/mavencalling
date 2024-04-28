@@ -11,4 +11,12 @@ pipeline {
             }
         }
     }
+        stage('Install Maven') {
+            steps {
+                // Install Maven using the 'Maven' tool defined in Jenkins
+                tool 'Maven'
+            }
+        }
+
+
 }
