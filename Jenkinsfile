@@ -5,6 +5,14 @@ pipeline {
     }
 
     stages {
+   
+
+         stage('example') {
+            steps {
+              tool 'Maven 3.9.6'
+        }
+         }
+
         stage('List Workspace') {
             steps {
                 script {
@@ -14,7 +22,7 @@ pipeline {
             }
         }
 
-         stage('example') {
+         stage('example1') {
             steps {
                 script {
                    
