@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+      Maven '3.9.6'  
+    }
 
     stages {
         stage('List Workspace') {
@@ -10,13 +13,17 @@ pipeline {
                 }
             }
         }
-    
-        stage('Install Maven') {
+
+         stage('example') {
             steps {
-                // Install Maven using the 'Maven' tool defined in Jenkins
-                tool 'Maven'
+                script {
+                   
+                    sh 'Maven --version'
+                }
             }
         }
+    
+      
     }
 
 
