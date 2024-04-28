@@ -8,6 +8,7 @@ pipeline {
           stage(example){
           steps{
               sh 'mvn --version'
+               sh 'mvn clean install'
           }
           }
  
