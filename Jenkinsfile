@@ -8,6 +8,7 @@ pipeline {
                 git 'https://github.com/superdoo/mavencalling.git'
             }
         }
+        */
         
         stage('Build') {
             steps {
@@ -15,6 +16,6 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        */
+        
     }
 }
