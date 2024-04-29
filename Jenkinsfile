@@ -31,7 +31,6 @@ stage('SonarQube Analysis') {
                     // Perform actions within the SonarQube environment
                     //sh 'mvn sonar:sonar'
                     sh "ls -l"
-                    sh "which sonar-scanner"
                     sh "pwd"
                     sh "whoami"
                 }
