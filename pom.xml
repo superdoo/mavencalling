@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>mavencallinggrpid</groupId>
+    <artifactId>mavencalling</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <sonar.host.url>http://3.135.204.27/9000</sonar.host.url>
+    </properties>
+
+    <dependencies>
+        <!-- Add your project dependencies here -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.0.3922</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
