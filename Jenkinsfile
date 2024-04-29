@@ -5,12 +5,13 @@ pipeline {
     }
       stages{
 
-          stage(example){
+         /* stage(example){
           steps{
               sh 'mvn --version'
             //this is bullshit  
           }
           }
+          */
 
          /*stage('Build') {
             steps {
@@ -31,6 +32,8 @@ stage('SonarQube Analysis') {
                     //sh 'mvn sonar:sonar'
                     sh "ls -l"
                     sh "which sonar-scanner"
+                    sh "pwd"
+                    sh "whoami"
                 }
             }
         }
