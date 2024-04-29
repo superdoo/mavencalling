@@ -12,7 +12,7 @@ pipeline {
           }
           }
 
-         stage('Build') {
+         /*stage('Build') {
             steps {
                 // Define Maven version and tool installation
                 tool '3.9.6'
@@ -21,6 +21,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        */
        
     stage('SonarQube Analysis') {
     steps{
