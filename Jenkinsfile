@@ -29,7 +29,7 @@ stage('SonarQube Analysis') {
                 withSonarQubeEnv('sonarqube-server') {
                     // Perform actions within the SonarQube environment
                     //sh 'mvn sonar:sonar'
-                    sh "ls-l"
+                    sh "ls -l"
                     sh "which sonar-scanner"
                 }
             }
