@@ -42,7 +42,7 @@ stage('SonarQube Analysis') {
             script{
             echo 'GIT_BRANCH:' + env.GIT_BRANCH
             try{
-            writeFile file: "${env.WORKSPACE}/sonar-project-properties", text: "sonar.projectKey=MichaelsScan\n" +
+            writeFile file: "${env.WORKSPACE}/sonar-project.properties", text: "sonar.projectKey=MichaelsScan\n" +
             			"sonar.projectName=MichaelsScan\n" +
             			"sonar.projectVersion=${env.JENKINS_LIBRARY_VERSION}\n" +
             			"sonar.exclusions=**/node_modules/**,**/.serverless/**\n" +
