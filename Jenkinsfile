@@ -23,15 +23,15 @@ pipeline {
         }
         */
        
-    stage('SonarQube Analysis') {
-    steps{
-          
-            withSonarQubeEnv(sonarqube-server){
-                sh "mvn sonar:sonar"
+stage('SonarQube Analysis') {
+            steps {
+                // Set up SonarQube environment
+                withSonarQubeEnv('sonarscanner') {
+                    // Perform actions within the SonarQube environment
+                    sh 'mvn sonar:sonar'
+                }
             }
-    
-    }
-  }
+        }
       }
 }
 
