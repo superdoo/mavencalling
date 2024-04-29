@@ -29,10 +29,8 @@ stage('SonarQube Analysis') {
                 // Set up SonarQube environment
                 withSonarQubeEnv('sonarqube-server') {
                     // Perform actions within the SonarQube environment
-                    //sh 'mvn sonar:sonar'
-                    sh "ls -l"
-                    sh "pwd"
-                    sh "whoami"
+                    sh "mvn sonar:sonar"
+                  
                 }
             }
         }
