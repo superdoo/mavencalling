@@ -26,7 +26,7 @@ pipeline {
 stage('SonarQube Analysis') {
             steps {
                 // Set up SonarQube environment
-                withSonarQubeEnv('sonarscanner') {
+                withSonarQubeEnv('sonarqube-server') {
                     // Perform actions within the SonarQube environment
                     sh 'mvn sonar:sonar'
                 }
