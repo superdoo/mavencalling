@@ -24,7 +24,7 @@ pipeline {
         }
         */
        
-stage('SonarQube Analysis') {
+/*stage('SonarQube Analysis') {
             steps {
                 // Set up SonarQube environment
                 withSonarQubeEnv('sonarqube-server') {
@@ -33,7 +33,35 @@ stage('SonarQube Analysis') {
                   
                 }
             }
+        
         }
+        */
+stage('SonarQube Analysis') {
+            steps {
+            echo "Starting SonarQ Analysis"
+            script{
+            echo 'GIT_BRANCH:' +env.GIT_BRANCH
+            try{
+            writeFile file: "${env.WORKSPACE}/sonar-project-properties", text: "sonar.projectKey=MichaelsScan\n" +
+            			"sonar.projectName=MichaelsScan\n" +
+            			"sonar.projectVersion=${env.JENKINS_LIBRARY_VERSION}\n" +
+            			"sonar.exclusions=**/node_modules/**,**/.serverless/**\n" +
+            			"sonar.branch.name=${env.GIT_BRANCH}\n" +
+            			"sonar.sources=.\n"
+            	   sh "cat ${WORKSPACE}/sonar-project.properties"
+            	   
+            	      withSonarQubeEnv('sonarqube-server') {
+                    // Perform actions within the SonarQube environment
+                    sh "mvn sonar:sonar"                 
+                }
+       	   
+            } catch(Exception e) {
+               echo "EPIC FAILURE LOSER. ERROR: ${e}"
+               }
+            	  
+        }
+            }
+}
       }
 }
 
