@@ -40,7 +40,7 @@ stage('SonarQube Analysis') {
             steps {
             echo "Starting SonarQ Analysis"
             script{
-            echo 'GIT_BRANCH:' +env.GIT_BRANCH
+            echo 'GIT_BRANCH:' + env.GIT_BRANCH
             try{
             writeFile file: "${env.WORKSPACE}/sonar-project-properties", text: "sonar.projectKey=MichaelsScan\n" +
             			"sonar.projectName=MichaelsScan\n" +
@@ -52,7 +52,7 @@ stage('SonarQube Analysis') {
             	   
             	      withSonarQubeEnv('sonarqube-server') {
                     // Perform actions within the SonarQube environment
-                    sh "mvn sonar:sonar"                 
+                    //sh "mvn sonar:sonar"                 
                 }
        	   
             } catch(Exception e) {
