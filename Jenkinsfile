@@ -52,7 +52,10 @@ stage('SonarQube Analysis') {
             	   
             	      withSonarQubeEnv('sonarqube-server') {
                     // Perform actions within the SonarQube environment
-                    sh "mvn sonar:sonar"                 
+                withSonarQubeEnv('sonarqube-server'){
+                    sh "${tool(sonar-scanner-4.8)}/bin/sonar-scanner"
+                }
+                    //sh "mvn sonar:sonar"                 
                 }
        	   
             } catch(Exception e) {
