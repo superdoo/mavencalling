@@ -56,7 +56,7 @@ stage('SonarQube Analysis') {
                 }
        	   
             } catch(Exception e) {
-               echo "EPIC FAILURE LOSER. ERROR: ${e}"
+               echo "EPIC FAILURE. ERROR: ${e}"
                }
             	  
         }
