@@ -51,9 +51,9 @@ stage('SonarQube Analysis') {
             			"sonar.sources=.\n"
             	   sh "cat ${WORKSPACE}/sonar-project.properties"
             	   
-            	      withSonarQubeEnv('sonarqube-server') {
+            	      withSonarQubeEnv('sonarscanner') {
                     // Perform actions within the SonarQube environment
-                withSonarQubeEnv('sonarqube-server'){
+                withSonarQubeEnv('sonarscanner'){
                     sh "${tool(sonarscanner-5.0)}/bin/sonar-scanner"
                 }
                     //sh "mvn sonar:sonar"                 
