@@ -1,3 +1,4 @@
+@Library(my-global-shared-library) _
 pipeline {
     agent any
     tools {
@@ -53,7 +54,7 @@ stage('SonarQube Analysis') {
             	      withSonarQubeEnv('sonarqube-server') {
                     // Perform actions within the SonarQube environment
                 withSonarQubeEnv('sonarqube-server'){
-                    sh "${tool(sonar-scanner-4.8)}/bin/sonar-scanner"
+                    sh "${tool(sonarscanner-5.0)}/bin/sonar-scanner"
                 }
                     //sh "mvn sonar:sonar"                 
                 }
