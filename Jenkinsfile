@@ -8,7 +8,7 @@ pipeline {
          /* stage(example){
           steps{
               sh 'mvn --version'
-            //this is bullshit  
+            
           }
           }
           */
